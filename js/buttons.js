@@ -1,28 +1,18 @@
 /*
 =================================Forest================================
 */
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    // listen for messages sent from background.js
+    if (request.message === 'hello!') {
+      console.log("button.js has received" + request.url) // new url is now in content scripts!
+    }
+})
 
 
 let forest = document.getElementById("forest");
 forest.style.backgroundColor = '#5FF';
 
-// When the button is clicked, inject setPageBackgroundColor into current page
-forest.addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageBackgroundColor,
-  });
-});
-
-// The body of this function will be execuetd as a content script inside the
-// current page
-function setPageBackgroundColor() {
-
-    console.log("hello");
-    document.body.style.backgroundColor = '#5FF';
-}
 
 /*
 =================================blackList================================
@@ -35,16 +25,12 @@ webList.style.backgroundColor = '#F47';
 webList.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageBackgroundColor2,
+  chrome.tabs.create({
+    url: 'chrome-extension://hhnbehecblkohhojeiekejddfdcmjolj/html/options.html'
   });
 });
 
-// The body of this function will be execuetd as a content script inside the
-// current page
-function setPageBackgroundColor2() {
 
-    console.log("hello");
-    document.body.style.backgroundColor = '#F47';
-}
+
+
+/* ================================================================*/
