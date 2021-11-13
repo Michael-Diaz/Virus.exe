@@ -37,12 +37,6 @@ function handleButtonClick(event) {
   if (current && current !== event.target) {
     current.classList.remove(selectedClassName);
   }
-
-  /*
-  // Mark the button as selected
-  let color = event.target.dataset.color;
-  event.target.classList.add(selectedClassName);
-  chrome.storage.sync.set({ color });*/
 }
 
 // Add a button to the page for each supplied color
