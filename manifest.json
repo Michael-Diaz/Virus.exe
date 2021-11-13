@@ -15,5 +15,6 @@
   },
   "icons": {
     "16": "/images/original.png"
-  }
+  },
+  "options_page": "/html/options.html"
 }
