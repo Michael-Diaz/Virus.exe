@@ -14,4 +14,5 @@ chrome.tabs.onUpdated.addListener(
 
 
   }
+  
 );
