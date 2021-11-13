@@ -2,5 +2,18 @@
   "name": "We'll change this later lol",
   "description": "Does a thing!",
   "version": "1.0",
-  "manifest_version": 3
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action":{
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/original.png"
+    }
+  },
+  "icons": {
+    "16": "/images/original.png"
+  }
 }
