@@ -1,0 +1,20 @@
+{
+  "name": "Zen Tree",
+  "description": "Leverage your productivity to cultivate your forest",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "/js/background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action":{
+    "default_popup": "/html/popup.html",
+    "default_icon": {
+      "16": "/images/original.png"
+    }
+  },
+  "icons": {
+    "16": "/images/original.png"
+  },
+  "options_page": "/html/options.html"
+}
