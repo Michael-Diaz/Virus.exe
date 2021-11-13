@@ -50,21 +50,6 @@ function constructOptions() {
 
   chrome.storage.sync.get(['URLs'], function (result) {
     console.log("get from local storage " + result.URLs)
-    if(result.URLs){
-      // If there are elements in the list, create a table for those elements
-      var table = document.createElement('table');
-      table.setAttribute('id', 'urlBlackList');     // Set table id.
-
-      var tr = table.insertRow(-1);               // Create a row (for header).
-
-      for (var h = 0; h < this.col.length; h++) {
-          // Add table header.
-          var th = document.createElement('th');
-          th.innerHTML = this.col[h].replace('_', ' ');
-          tr.appendChild(th);
-      }
-    }
-
     for (let URL of result.URLs) {
       // …create a button with that color…
       let button = document.createElement("ul");
@@ -75,7 +60,6 @@ function constructOptions() {
       page.appendChild(button);
     }
   });
-    
 
 }
 
