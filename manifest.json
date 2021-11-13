@@ -8,7 +8,7 @@
   },
   "permissions": ["storage", "activeTab", "scripting", "history", "tabs"],
   "action":{
-    "default_popup": "/html/popup.html",
+    "default_popup": "/html/popup2.html",
     "default_icon": {
       "16": "/images/bonzai.png"
     }
