@@ -10,21 +10,7 @@
   // Create list of items
   // store in chrome storage
 
-// by passing an object you can define default values e.g.: []
-chrome.storage.local.get({userKeyIds: []}, function (result) {
-  // the input argument is ALWAYS an object containing the queried keys
-  // so we select the key we need
-  var userKeyIds = result.userKeyIds;
-  userKeyIds.push({keyPairId: keyPairId, HasBeenUploadedYet: false});
-  // set the new array value to the same key
-  chrome.storage.local.set({userKeyIds: userKeyIds}, function () {
-      // you can use strings instead of objects
-      // if you don't  want to define default values
-      chrome.storage.local.get('userKeyIds', function (result) {
-          console.log(result.userKeyIds)
-      });
-  });
-});
+  // List starts as blank 
   
 
 */
@@ -64,9 +50,24 @@ function constructOptions() {
 
   chrome.storage.sync.get(['URLs'], function (result) {
     console.log("get from local storage " + result.URLs)
+    if(result.URLs){
+      // If there are elements in the list, create a table for those elements
+      var table = document.createElement('table');
+      table.setAttribute('id', 'urlBlackList');     // Set table id.
+
+      var tr = table.insertRow(-1);               // Create a row (for header).
+
+      for (var h = 0; h < this.col.length; h++) {
+          // Add table header.
+          var th = document.createElement('th');
+          th.innerHTML = this.col[h].replace('_', ' ');
+          tr.appendChild(th);
+      }
+    }
+
     for (let URL of result.URLs) {
       // …create a button with that color…
-      let button = document.createElement("button");
+      let button = document.createElement("ul");
       button.innerHTML = URL;     
 
       // …and register a listener for when that button is clicked

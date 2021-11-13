@@ -4,10 +4,21 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <div id="buttonDiv">
-    </div>
-    <div>
-      <p>Choose a different background color!</p>
+    <div class="main-container">
+      <!--URL List -- scrollable
+            URL Name 
+            Delete from list (delete from URL List)-->
+      <div id="sub-container">
+        <div id="buttonDiv" overflow: "scroll"></div>
+      </div>
+      <!--Add URL Form-->
+      <div id="sub-container">
+        <p>Add a new URL to your blacklist</p>
+        <form id="url-enter">
+          <input type="text" name="url" placeholder="URL"><br>
+          <button>Add URL</button>
+        </form>
+      </div>
     </div>
   </body>
   <script src="/js/options.js"></script>
