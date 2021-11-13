@@ -18,11 +18,11 @@ forest.style.backgroundColor = '#5FF';
 =================================blackList================================
 */
 
-let webList = document.getElementById("webList");
-webList.style.backgroundColor = '#F47';
+let blacklist = document.getElementById("blacklist");
+blacklist.style.backgroundColor = '#F47';
 
 // When the button is clicked, inject setPageBackgroundColor into current page
-webList.addEventListener("click", async () => {
+blacklist.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
   chrome.tabs.create({
