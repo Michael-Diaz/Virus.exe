@@ -1,77 +1,83 @@
 body {
-	display: flex;
-	position: relative;
-	overflow: hidden;
-	white-space: nowrap;
-	min-height: 400px;
-	min-width: 500px;
-	width: 100%;
-	background: radial-gradient(ellipse at top, #498ad6, transparent),
-		radial-gradient(ellipse at bottom, #959031, transparent);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  min-height: 400px;
+  min-width: 500px;
+  width: 100%;
+  background: radial-gradient(ellipse at top, #498ad6, transparent),
+    radial-gradient(ellipse at bottom, #959031, transparent);
 }
 
 button {
-	border: none;
-	box-shadow: 7px 7px 7px #999;
-	display: flex;
-	font-weight: bold;
-	height: 30px;
-	outline: none;
-	align-items: center; 
-	width: 105px;
+  border: none;
+  box-shadow: 7px 7px 7px #999;
+  display: flex;
+  font-weight: bold;
+  height: 30px;
+  outline: none;
+  align-items: center;
+  width: 105px;
 }
 
+#buttonDiv {
+  overflow: scroll;
+  height: 200px;
+  width: 200px;
+  border: none;
+  box-shadow: 7px 7px 7px #999;
+}
 
 #closeBigWindow {
-	height: 20px;
-	width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 #minimizeBigWindow {
-	height: 20px;
-	width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 #backButton {
-	height: 20px;
-	width: 30px;
+  height: 20px;
+  width: 30px;
 }
 
 #bottomButtons {
-	justify-content: center;
-	background-color: #A3C1C1;
-	border: 1px solid black;
-	border-color: #99BBBB;
-	color: white;
-	float: left;
+  justify-content: center;
+  background-color: #a3c1c1;
+  border: 1px solid black;
+  border-color: #99bbbb;
+  color: white;
+  float: left;
 }
 
-
 #alignBottomButtons {
-	display: flex;
-	position: absolute;
-	bottom: 8px;
-	right: 8px;
+  display: flex;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
 }
 
 #alignTopRight {
-	height: 20px;
-	width: 20px;
-	display: flex;
-	position: absolute;
-	top: 0px;
-	right: 30px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 30px;
 }
 
 #alignTopLeft {
-	height: 20px;
-	width: 20px;
-	display: flex;
-	position: absolute;
-	top: 0px;
-	left: 10px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 10px;
 }
 
 button.current {
-	box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
