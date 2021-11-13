@@ -10,11 +10,11 @@
   "action":{
     "default_popup": "/html/popup.html",
     "default_icon": {
-      "16": "/images/original.png"
+      "16": "/images/bonzai.png"
     }
   },
   "icons": {
-    "16": "/images/original.png"
+    "16": "/images/bonzai.png"
   },
   "options_page": "/html/options.html"
 }
