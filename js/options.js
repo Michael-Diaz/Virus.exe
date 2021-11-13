@@ -8,14 +8,24 @@
 }
 
   // Create list of items
-  // store in 
+  // store in chrome storage
+
+  // List starts as blank 
+  
 
 */
 
 
 let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";
-const presetButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
+const presetURLs = ["https://www.google.com/", "https://replit.com/@mosshan/testy#main.go"];
+
+
+chrome.storage.sync.set({URLs: presetURLs}, function() {
+  console.log('Value is set to' + presetURLs);
+});
+
+
 
 // Reacts to a button click by marking the selected button and saving
 // the selection
@@ -28,34 +38,46 @@ function handleButtonClick(event) {
     current.classList.remove(selectedClassName);
   }
 
+  /*
   // Mark the button as selected
   let color = event.target.dataset.color;
   event.target.classList.add(selectedClassName);
-  chrome.storage.sync.set({ color });
+  chrome.storage.sync.set({ color });*/
 }
 
 // Add a button to the page for each supplied color
-function constructOptions(buttonColors) {
-  chrome.storage.sync.get("color", (data) => {
-    let currentColor = data.color;
-    // For each color we were provided…
-    for (let buttonColor of buttonColors) {
-      // …create a button with that color…
-      let button = document.createElement("button");
-      button.dataset.color = buttonColor;
-      button.style.backgroundColor = buttonColor;
+function constructOptions() {
 
-      // …mark the currently selected color…
-      if (buttonColor === currentColor) {
-        button.classList.add(selectedClassName);
+  chrome.storage.sync.get(['URLs'], function (result) {
+    console.log("get from local storage " + result.URLs)
+    if(result.URLs){
+      // If there are elements in the list, create a table for those elements
+      var table = document.createElement('table');
+      table.setAttribute('id', 'urlBlackList');     // Set table id.
+
+      var tr = table.insertRow(-1);               // Create a row (for header).
+
+      for (var h = 0; h < this.col.length; h++) {
+          // Add table header.
+          var th = document.createElement('th');
+          th.innerHTML = this.col[h].replace('_', ' ');
+          tr.appendChild(th);
       }
+    }
+
+    for (let URL of result.URLs) {
+      // …create a button with that color…
+      let button = document.createElement("ul");
+      button.innerHTML = URL;     
 
       // …and register a listener for when that button is clicked
       button.addEventListener("click", handleButtonClick);
       page.appendChild(button);
     }
   });
+    
+
 }
 
 // Initialize the page by constructing the color options
-constructOptions(presetButtonColors);
+constructOptions();
