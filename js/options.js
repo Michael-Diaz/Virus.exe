@@ -64,6 +64,9 @@ function constructOptions() {
   chrome.storage.sync.get(['URLs'], function (result) {
     console.log("get from local storage " + result.URLs)
     
+	let breakSpace = document.createElement("br")
+	page.appendChild(breakSpace)
+	
     for (let URL of result.URLs) {
       // …create a blist item
       let listItem = document.createElement("ul"); 
@@ -81,6 +84,7 @@ function constructOptions() {
 	  button.style.height = "20px"
 	  button.style.position = "relative"
 	  button.style.top = "-30px"
+	  listItem.style.fontSize = '15px'
 	  listItem.style.listStyleType ="button"
 	  listItem.style.margin = "6px"
 	  listItem.style.borderBottom = "2px solid black"
