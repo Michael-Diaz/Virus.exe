@@ -124,7 +124,11 @@ button {
   display: flex;
   position: absolute;
   top: -6px;
+<<<<<<< HEAD
   left: -6px;
+=======
+  left: -5px;
+>>>>>>> main
 }
 
 button.current {
