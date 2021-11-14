@@ -72,8 +72,19 @@ function constructOptions() {
 
       // create its remove button
       let button = document.createElement("button");
-      button.innerText = "Remove";
+      button.innerText = "X";
       button.id = URL;
+	  button.style.color = 'red';
+	  button.style.justifyContent = "center";
+	  button.style.backgroundColor = '#a3c1c1'
+	  button.style.boxShadow = 'none'
+	  button.style.width = "20px"
+	  button.style.height = "20px"
+	  button.style.position = "relative"
+	  button.style.top = "-30px"
+	  listItem.style.listStyleType ="button"
+	  listItem.style.borderBottom = "1px solid black"
+	  
       console.log("button id is: " + button.id);
 
       // …and register a listener for when that button is clicked
