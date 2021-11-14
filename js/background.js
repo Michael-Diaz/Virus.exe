@@ -16,9 +16,9 @@ chrome.tabs.onUpdated.addListener(
         {
           console.log("visited restricted url" + changeInfo.url);
         }
-      } 
+      });
     }
-
   }
+
   
 );
