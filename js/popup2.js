@@ -7,3 +7,16 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function() {
   output.innerHTML = this.value;
 }
+
+
+let begin = document.getElementById("begin");
+begin.addEventListener("click", function(){
+
+  // Store Chosen Time
+  chrome.storage.sync.set({sessionTime: slider.value}, function() {
+    console.log('session time is set to' + slider.value);
+  });
+
+  window.location.href = "/html/popup.html";
+
+});
