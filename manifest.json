@@ -1,6 +1,6 @@
 {
-  "name": "We'll change this later lol",
-  "description": "Does a thing!",
+  "name": "ProductiviTree",
+  "description": "Build a forest! Zen!",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
