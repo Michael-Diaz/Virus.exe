@@ -3,17 +3,18 @@ body {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  min-height: 400px;
-  min-width: 500px;
+  min-height: 500px;
+  min-width: 600px;
   width: 100%;
   background: radial-gradient(ellipse at top, #498ad6, transparent),
     radial-gradient(ellipse at bottom, #959031, transparent);
 }
 
 button {
+  border-radius: 10px;
   display:block;
   border: none;
-  box-shadow: 7px 7px 7px #999;
+  box-shadow: 4px 4px 4px #999;
   display: flex;
   font-weight: bold;
   height: 30px;
@@ -84,12 +85,16 @@ button {
 }
 
 #backButton {
+  border-radius: 10px;
   justify-content: center;
   height: 20px;
   width: 30px;
 }
 
 #bottomButtons {
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   justify-content: center;
   background-color: #a3c1c1;
   border: 1px solid black;
@@ -124,14 +129,9 @@ button {
   display: flex;
   position: absolute;
   top: -6px;
-<<<<<<< HEAD
-  left: -6px;
-=======
-  left: -5px;
->>>>>>> main
 }
 
-button.current {
+button.current{
   box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
@@ -140,3 +140,4 @@ a{
 	position: relative;
 	padding: 1em 2em 1em 2em;
 }
+

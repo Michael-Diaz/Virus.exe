@@ -83,7 +83,8 @@ function constructOptions() {
 	  button.style.position = "relative"
 	  button.style.top = "-30px"
 	  listItem.style.listStyleType ="button"
-	  listItem.style.borderBottom = "1px solid black"
+	  listItem.style.margin = "6px"
+	  listItem.style.borderBottom = "2px solid black"
 	  
       console.log("button id is: " + button.id);
 
