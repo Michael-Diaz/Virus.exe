@@ -48,6 +48,28 @@ function displayForest() {
       });
   */
 
+  chrome.storage.sync.get(['Forest'], function (result) {
+    console.log("get from local storage " + result.Trees)
+    if(result.Forest != undefined){
+      
+      for (let tree of result.Forest) {
+        const img = new Image();
+
+        img.src = "https://i.natgeofe.com/k/6289c775-a06c-426a-badb-8d181a55237b/raccoon-grass_2x1.jpg";
+        if(img && img.style) {
+          img.style.height = '100px';
+          img.style.width = '200px';
+        }
+        page.appendChild(img);
+      }
+    }
+    else{
+      let message = document.createElement("ul"); 
+      message.innerText = "No trees grown yet..";
+      page.appendChild(message);
+    }
+  });
+
   const img = new Image();
   img.src = "https://i.natgeofe.com/k/6289c775-a06c-426a-badb-8d181a55237b/raccoon-grass_2x1.jpg";
   if(img && img.style) {
