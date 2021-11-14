@@ -1,6 +1,6 @@
 {
-  "name": "We'll change this later lol",
-  "description": "Does a thing!",
+  "name": "ProductiviTree",
+  "description": "Rewards you with unique trees for being productive!",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
