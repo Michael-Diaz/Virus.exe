@@ -123,8 +123,8 @@ button {
   width: 20px;
   display: flex;
   position: absolute;
-  top: 0px;
-  left: 10px;
+  top: -6px;
+  left: -5px;
 }
 
 button.current {
