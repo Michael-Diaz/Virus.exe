@@ -11,6 +11,7 @@ body {
 }
 
 button {
+  display:block;
   border: none;
   box-shadow: 7px 7px 7px #999;
   display: flex;
@@ -84,6 +85,10 @@ button {
   border-color: #99bbbb;
   color: white;
   float: left;
+}
+
+#bottomButtons:hover{
+	background-color: #6BCBC0;
 }
 
 #alignBottomButtons {
