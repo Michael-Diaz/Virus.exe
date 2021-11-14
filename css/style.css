@@ -46,11 +46,14 @@ button {
 }
 
 #urlAdd {
+  display: flex;
   justify-content: center;
   background-color: #a3c1c1;
-  border: 1px solid black;
-  border-color: #99bbbb;
   color: white;
+}
+
+#stupidFuckingMethodOfCreatingBlankSpace{
+	padding-top: 5px;
 }
 
 
