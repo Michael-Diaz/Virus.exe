@@ -32,32 +32,6 @@ button {
   width: 20px;
 }
 
-#backButton {
-  height: 20px;
-  width: 30px;
-}
-
-#forest {
-}
-
-#blacklist {
-}
-
-#githubLink {
-}
-
-#donationLink {
-}
-
-#alignBottomButtons {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-  position: absolute;
-  bottom: 0;
-}
-
 #alignTopRight {
   height: 20px;
   width: 20px;
