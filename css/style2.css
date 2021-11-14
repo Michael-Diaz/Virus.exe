@@ -23,11 +23,15 @@ button {
 }
 
 #closeSmallWindow {
+  justify-content: center;
   height: 20px;
   width: 20px;
 }
 
 #maximizeSmallWindow {
+  display:flex;
+  align-items: center;
+  justify-content: center;
   height: 20px;
   width: 20px;
 }
@@ -38,7 +42,7 @@ button {
   display: flex;
   position: absolute;
   top: -6px;
-  right: 10px
+  right: 10px;
 }
 
 #alignTopLeft {
@@ -52,4 +56,10 @@ button {
 
 button.current {
   box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+}
+
+a{
+	display: block;
+	position: relative;
+	padding: 1em 1em 1em 1em;
 }
