@@ -39,11 +39,12 @@ addURL.addEventListener("click", function(){
           alert("URL is already listed");
           
         }
-        else{
+        else
+        {
           URLList.push(URLtoAdd);
           chrome.storage.sync.set({URLs: URLList}, function() {
-          console.log('Value is set to' + URLList);
-      });
+            console.log('Value is set to' + URLList);
+          });
         }
       }
     });

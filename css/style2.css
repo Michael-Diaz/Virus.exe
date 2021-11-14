@@ -5,22 +5,42 @@ body {
   white-space: nowrap;
   min-height: 200px;
   min-width: 200px;
-  width: 100%;
   background: radial-gradient(ellipse at top, #498ad6, transparent),
     radial-gradient(ellipse at bottom, #959031, transparent);
+  font-family: sans-serif;
+  flex-direction: column;
+  margin-left:20px;
+  margin-right:20px;
 }
 
 button {
-  border-radius: 10px;
-  border: none;
-  box-shadow: 7px 7px 7px #999;
-  display: flex;
-  font-weight: bold;
-  height: 30px;
-  outline: none;
-  text-align: center;
-  vertical-align: middle;
-  width: 120px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 40px;
+  font: 30px;
+  justify-content: center;
+  background-color: #3e9e9e;
+  border: 1px solid black;
+  border-color: #99bbbb;
+  color: rgb(255, 255, 255);
+  float: left;
+  font:bold;
+}
+#title{
+  font:bold;
+  font:24px;
+}
+#container{
+  margin-top: -5px;
+  justify-content: left;
+  place-items: center;
+}
+
+#container2{
+  margin-top: -5px;
+  justify-content: center;
+  place-items: center;
 }
 
 #closeSmallWindow {
@@ -30,7 +50,7 @@ button {
 }
 
 #maximizeSmallWindow {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 20px;
@@ -42,8 +62,8 @@ button {
   width: 20px;
   display: flex;
   position: absolute;
-  top: -6px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
 }
 
 #alignTopLeft {
@@ -59,8 +79,55 @@ button.current {
   box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
-a{
-	display: block;
-	position: relative;
-	padding: 1em 1em 1em 1em;
+a {
+  display: block;
+  position: relative;
+  padding: 1em 1em 1em 1em;
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 0px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+#demo {
+  font-size: 15px;
+}
+
+#rangeLabel {
+  font-size: 15px;
+  margin-left:10px;
+}
+#length {
+  margin-top:20px;
+  font-size: 15px;
+}
+#slidecontainer {
+  align-items: center;
 }

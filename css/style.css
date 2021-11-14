@@ -128,7 +128,8 @@ button {
   width: 20px;
   display: flex;
   position: absolute;
-  top: -6px;
+  top: -25px;
+  left: 0px;
 }
 
 button.current{
@@ -139,5 +140,19 @@ a{
 	display: block;
 	position: relative;
 	padding: 1em 2em 1em 2em;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__label {
+  position: absolute;
+  margin-top:30px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
 }
 

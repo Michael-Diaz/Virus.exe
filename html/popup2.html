@@ -4,12 +4,40 @@
     <link rel="stylesheet" href="/css/style2.css">
   </head>
   <body id = "body">
- 
-	
-	<div id="alignTopRight">
-		<button id="maximizeSmallWindow" >
-			<a href="/html/popup.html" style="color:black;text-decoration:none;">+</a>
-		</button>
-	</div>
+    <br>
+    <br>
+    <h1 id="title">Focus Session Settings:</h1>
+    <div id="container">
+      <div id="alignTopRight">
+        <button id="maximizeSmallWindow" >
+          <a href="/html/popup.html" style="color:black;text-decoration:none;">+</a>
+        </button>
+      </div>
+    </div>
+    <h2 style="align-self: left;">Select Time Length:</h2> 
+    <div id="container">
+      <div class="slidecontainer">
+        <input type="range" min="1" max="60" value="1" class="slider" id="myRange">
+      </div>
+    </div>
+    <div id="container2">
+      <p id="rangeLabel"><span id="demo"></span> Minute(s)</p>
+    </div>
+    <br>
+    <div id="container">
+      <button id="begin" style = "width:100%">
+        <!-- link to blacklist here -->
+        <a href = "/html/popup.html"  style="color:black;text-decoration:none;font-weight:bold"> Start Timer</a>
+      </button>
+    </div>
+    <div id="container">
+      <p></p>
+      <button id="begin" style = "width:100%">
+        <!-- link to blacklist here -->
+        <a href = "/html/options.html"  style="color:black;text-decoration:none;font-weight:bold"> Site List</a>
+      </button>
+    </div>
+    <br>
   </body>
+  <script src="/js/popup2.js"></script>
 </html>
