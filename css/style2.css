@@ -64,19 +64,16 @@ button {
   display: flex;
   position: absolute;
   top: -6px;
-  right: 28px
+  right: 10px
 }
 
 #alignTopLeft {
   height: 20px;
   width: 20px;
-  display: -webkit-flex;
   display: flex;
-  webkit-justify-content: space-around;
-  justify-content: space-around;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 10px;
 }
 
 button.current {

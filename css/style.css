@@ -18,7 +18,7 @@ button {
   height: 30px;
   outline: none;
   align-items: center;
-  width: 105px;
+  width: 120px;
 }
 
 #buttonDiv {
@@ -95,8 +95,8 @@ button {
   width: 20px;
   display: flex;
   position: absolute;
-  top: 0px;
-  right: 30px;
+  top: -6px;
+  right: 10px;
 }
 
 #alignTopLeft {
