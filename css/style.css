@@ -53,6 +53,14 @@ button {
   color: white;
 }
 
+#addURL{
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  background-color: #a3c1c1;
+  color: white;
+}
+
 #stupidFuckingMethodOfCreatingBlankSpace{
 	padding-top: 5px;
 }
@@ -64,16 +72,19 @@ button {
   justify-content: center;
 }
 #closeBigWindow {
+  justify-content: center;
   height: 20px;
   width: 20px;
 }
 
 #minimizeBigWindow {
+  justify-content: center;
   height: 20px;
   width: 20px;
 }
 
 #backButton {
+  justify-content: center;
   height: 20px;
   width: 30px;
 }
@@ -118,4 +129,10 @@ button {
 
 button.current {
   box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+}
+
+a{
+	display: block;
+	position: relative;
+	padding: 1em 2em 1em 2em;
 }
