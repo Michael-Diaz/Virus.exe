@@ -1,0 +1,92 @@
+<html>
+<style>
+body {  background-color: rgb(135, 222, 248);}
+</style>
+<body>
+<canvas id='myCanvas' width='1240' height='600'></canvas>
+<script>
+
+// line 6 is the resolution of my screen; you might have to change it to suit your computer
+
+function build_trunk() 
+{
+    rootX = rootX + (Math.cos(theta) * circ); // x component of the angle multiplied by the magnitude (step distance)
+    rootY = rootY - (Math.sin(theta) * circ); // same thing but w/ y
+
+    ctx.beginPath(); // stroke will draw the total path, beginPath starts it
+    ctx.ellipse(rootX, rootY, Math.log(treeIterate + 1) * circ, Math.log(treeIterate + 1) * circ, 0, 0, 2 * Math.PI); // xCenter, yCenter, width, height, rotation, starting angle, ending angle
+    ctx.closePath(); // closePath ends the path to be drawn
+    ctx.fill(); // will fill every shape with fillStyle color
+    ctx.stroke(); // draw the path
+
+    if (treeIterate == randY[0])
+    {
+        while (treeIterate == randY[0]) 
+            randY.shift();
+
+        let sign = Math.random() < 0.5 ? -1 : 1;
+        let calcAngle = (90 + ((Math.floor(Math.random() * 50) + 40) * sign)) * 0.0174533;
+
+        build_branch(treeIterate, calcAngle, rootX, rootY)
+    }
+}
+
+function build_branch(rootIteration, newTheta, newX, newY)
+{
+    newX = newX + (Math.cos(newTheta) * circ); // x component of the angle multiplied by the magnitude (step distance)
+    newY = newY - (Math.sin(newTheta) * circ); // same thing but w/ y
+
+    ctx.beginPath(); // stroke will draw the total path, beginPath starts it
+    ctx.ellipse(newX, newY, Math.log(rootIteration + 1) * (circ - 1), Math.log(rootIteration + 1) * (circ - 1), 0, 0, 2 * Math.PI); // xCenter, yCenter, width, height, rotation, starting angle, ending angle
+    ctx.closePath(); // closePath ends the path to be drawn
+    ctx.fill(); // will fill every shape with fillStyle color
+    ctx.stroke(); // draw the path
+
+    rootIteration--
+    if (rootIteration > 0)
+        window.requestAnimationFrame(function() {build_branch(rootIteration, newTheta, newX, newY)});
+}
+
+function animate()
+{
+    treeIterate--; // mass iteration
+
+    build_trunk()
+    
+    if (treeIterate > 0) // keep animating until the trunk reaches its apex
+    {
+        window.requestAnimationFrame(animate); // recursively update frames
+    }
+}
+
+// ================================== Canvas Setup ===================================
+let canvas = document.getElementById('myCanvas'); // specifies the canvas object in the webpage
+let ctx = canvas.getContext('2d'); // stuff happens within the context
+ctx.strokeStyle = "#807153"; // lighter brown color
+ctx.fillStyle = "#807153";
+// ===================================================================================
+
+// ==================================== Constants ====================================
+let circ = 3;
+let treeIterate = 200, totalIterate = treeIterate; // number of circles in the main branch
+let theta = Math.PI / 2;
+let rootX = canvas.width / 2, rootY = canvas.height;
+let boolFirst = true;
+// ===================================================================================
+
+// ============================= Generate Branching Vals =============================
+let branchMax = parseInt(totalIterate * 9 / 10);
+let branchMin = parseInt(totalIterate * 1 / 3);
+
+const randY = [];
+for (let i = Math.floor(Math.random() * 5) + 4; i > 0; i--)
+    randY.push(Math.floor(Math.random() * (branchMax - branchMin) + branchMin));
+randY.sort(function(a, b) {return b - a;});
+
+console.log(randY);
+// ===================================================================================
+
+window.requestAnimationFrame(animate); // initally calls the build_tree function to begin animation
+</script>
+</body>
+</canvas>
