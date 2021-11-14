@@ -33,11 +33,19 @@ addURL.addEventListener("click", function(){
     chrome.storage.sync.get(['URLs'], function (result) {
       if(result.URLs != undefined){
         URLList = result.URLs;
-      }
-      URLList.push(URLtoAdd);
-      chrome.storage.sync.set({URLs: URLList}, function() {
-        console.log('Value is set to' + URLList);
+
+        if(result.URLs.includes(URLtoAdd))
+        {
+          alert("URL is already listed");
+          
+        }
+        else{
+          URLList.push(URLtoAdd);
+          chrome.storage.sync.set({URLs: URLList}, function() {
+          console.log('Value is set to' + URLList);
       });
+        }
+      }
     });
     location.reload();
   }
@@ -76,18 +84,18 @@ function constructOptions() {
       let button = document.createElement("button");
       button.innerText = "X";
       button.id = URL;
-	  button.style.color = 'red';
-	  button.style.justifyContent = "center";
-	  button.style.backgroundColor = '#a3c1c1'
-	  button.style.boxShadow = 'none'
-	  button.style.width = "20px"
-	  button.style.height = "20px"
-	  button.style.position = "relative"
-	  button.style.top = "-30px"
-	  listItem.style.fontSize = '15px'
-	  listItem.style.listStyleType ="button"
-	  listItem.style.margin = "6px"
-	  listItem.style.borderBottom = "2px solid black"
+      button.style.color = 'red';
+      button.style.justifyContent = "center";
+      button.style.backgroundColor = '#a3c1c1'
+      button.style.boxShadow = 'none'
+      button.style.width = "20px"
+      button.style.height = "20px"
+      button.style.position = "relative"
+      button.style.top = "-30px"
+      listItem.style.fontSize = '15px'
+      listItem.style.listStyleType ="button"
+      listItem.style.margin = "6px"
+      listItem.style.borderBottom = "2px solid black"
 	  
       console.log("button id is: " + button.id);
 

@@ -12,7 +12,7 @@ chrome.tabs.onUpdated.addListener(
       })
       
       chrome.storage.sync.get(['URLs'], function (result) {
-        if(result.URLs.indexOf(changeInfo.url) != -1)
+        if(result.URLs.includes(changeInfo.url) != -1)
         {
           console.log("visited restricted url" + changeInfo.url);
         }
