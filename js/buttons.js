@@ -8,29 +8,3 @@ chrome.runtime.onMessage.addListener(
       console.log("button.js has received" + request.url) // new url is now in content scripts!
     }
 })
-
-
-let forest = document.getElementById("forest");
-forest.style.backgroundColor = '#5FF';
-
-
-/*
-=================================blackList================================
-*/
-
-let blacklist = document.getElementById("blacklist");
-blacklist.style.backgroundColor = '#F47';
-
-// When the button is clicked, inject setPageBackgroundColor into current page
-blacklist.addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-  chrome.tabs.create({
-    url: 'chrome-extension://hhnbehecblkohhojeiekejddfdcmjolj/html/options.html'
-  });
-});
-
-
-
-
-/* ================================================================*/
