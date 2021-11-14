@@ -19,7 +19,6 @@
 let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";
 
-
 let addURL = document.getElementById("addURL");
 
 // When the button is clicked, addURL to the list

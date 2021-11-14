@@ -30,7 +30,7 @@ button {
   width: 350px;
   border: none;
   box-shadow: 7px 7px 7px #999;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .main-container {
