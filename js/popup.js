@@ -1,34 +1,52 @@
-const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 10;
-const ALERT_THRESHOLD = 5;
-
-
-const TIME_LIMIT = 20;
 let timePassed = 0;
-let timeLeft = TIME_LIMIT;
 let timerInterval = null;
+let page = document.getElementById("complete");
+
+// Store Chosen Time
+chrome.storage.sync.get(['sessionTime'], function (result) {
+  chrome.storage.sync.get(['inSession'], function (answer){
+    let sessionTime = result.sessionTime;
+    if(!answer.inSession)
+    {
+      sessionTime = sessionTime*60;
+      // Store session start
+      chrome.storage.sync.set({inSession: true}, function() {
+      });
+    }
+    startTimer(sessionTime);
+
+    document.getElementById("app").innerHTML = `
+    <div class="base-timer">
+      <span id="base-timer-label" class="base-timer__label">${formatTime(
+        sessionTime
+      )}</span>
+    </div>
+    `;
+  });
+});
 
 
-document.getElementById("app").innerHTML = `
-<div class="base-timer">
-  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  </svg>
-  <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
-  )}</span>
-</div>
-`;
-
-startTimer();
 
 function onTimesUp() {
   clearInterval(timerInterval);
+  chrome.storage.sync.set({sessionTime: 0}, function() {
+  });
+  chrome.storage.sync.set({inSession: false}, function() {
+  });
+  let congrats = document.createElement("ul"); 
+  congrats.innerText = "Good Job! You Grew a Tree!";   
+  page.appendChild(congrats);
 }
 
-function startTimer() {
+function startTimer(amt) {
+  TIME_LIMIT = amt;
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
+    chrome.storage.sync.set({sessionTime: timeLeft}, function() {
+    });
+    chrome.storage.sync.set({inSession: true}, function() {
+    });
     document.getElementById("base-timer-label").innerHTML = formatTime(
       timeLeft
     );
@@ -51,7 +69,15 @@ function formatTime(time) {
 }
 
 
-function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
-  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-}
+let stopSession = document.getElementById("stopSession");
+stopSession.addEventListener("click", function(){
+
+  // Store Chosen Time
+  chrome.storage.sync.set({inSession: false}, function() {
+  });
+  chrome.storage.sync.set({sessionTime: 0}, function() {
+  });
+
+  window.location.href = "/html/popup2.html";
+
+});

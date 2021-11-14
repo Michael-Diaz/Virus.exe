@@ -12,7 +12,7 @@ body {
 
 button {
   border-radius: 10px;
-  display:block;
+  display: block;
   border: none;
   box-shadow: 4px 4px 4px #999;
   display: flex;
@@ -54,7 +54,7 @@ button {
   color: white;
 }
 
-#addURL{
+#addURL {
   box-shadow: none;
   display: flex;
   justify-content: center;
@@ -62,10 +62,9 @@ button {
   color: white;
 }
 
-#stupidFuckingMethodOfCreatingBlankSpace{
-	padding-top: 5px;
+#stupidFuckingMethodOfCreatingBlankSpace {
+  padding-top: 5px;
 }
-
 
 #sub-container {
   margin-left: auto;
@@ -76,6 +75,12 @@ button {
   justify-content: center;
   height: 20px;
   width: 20px;
+}
+
+#stopSession {
+  justify-content: center;
+  height: 40px;
+  width: 100px;
 }
 
 #minimizeBigWindow {
@@ -103,8 +108,8 @@ button {
   float: left;
 }
 
-#bottomButtons:hover{
-	background-color: #6BCBC0;
+#bottomButtons:hover {
+  background-color: #6bcbc0;
 }
 
 #alignBottomButtons {
@@ -123,23 +128,42 @@ button {
   right: 10px;
 }
 
-#alignTopLeft {
+#alignTopRightSession {
+  height: 20px;
+  width: 40px;
+  display: flex;
+  position: absolute;
+  top: -6px;
+  right: 80px;
+  
+}
+
+#alignTopLeftTimer {
   height: 20px;
   width: 20px;
   display: flex;
   position: absolute;
-  top: -25px;
+  top: -15px;
   left: 0px;
 }
 
-button.current{
+#alignTopLeftTimer {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+}
+
+button.current {
   box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
-a{
-	display: block;
-	position: relative;
-	padding: 1em 2em 1em 2em;
+a {
+  display: block;
+  position: relative;
+  padding: 1em 2em 1em 2em;
 }
 
 .base-timer__svg {
@@ -148,11 +172,10 @@ a{
 
 .base-timer__label {
   position: absolute;
-  margin-top:30px;
+  margin-top: 30px;
   width: 200px;
   height: 50px;
   display: flex;
   font-size: 30px;
   font-weight: bold;
 }
-
